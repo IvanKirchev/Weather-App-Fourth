@@ -1,4 +1,4 @@
-export default data = {
+export const data = {
   cod: "200",
   message: 0,
   cnt: 40,
@@ -41,42 +41,6 @@ export default data = {
         pod: "n"
       },
       dt_txt: "2021-11-12 18:00:00"
-    },
-    {
-      dt: 1636750800,
-      main: {
-        temp: 3.65,
-        feels_like: -1.03,
-        temp_min: 3.48,
-        temp_max: 3.65,
-        pressure: 1009,
-        sea_level: 1009,
-        grnd_level: 992,
-        humidity: 83,
-        temp_kf: 0.17
-      },
-      weather: [
-        {
-          id: 804,
-          main: "Clouds",
-          description: "overcast clouds",
-          icon: "04n"
-        }
-      ],
-      clouds: {
-        all: 98
-      },
-      wind: {
-        speed: 6.52,
-        deg: 294,
-        gust: 12.72
-      },
-      visibility: 10000,
-      pop: 0,
-      sys: {
-        pod: "n"
-      },
-      dt_txt: "2021-11-12 21:00:00"
     },
     {
       dt: 1636761600,
