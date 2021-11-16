@@ -31,7 +31,7 @@ function Forecast(props:ForecastProps) {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            {props.forecast ? <h2>5 Days forcast for {props.forecast?.city.name}</h2> : null }
+            {props.forecast ? <h2>{props.forecast.days.filter((e) => (e != undefined)).length} Days forcast for {props.forecast?.city.name}</h2> : null }
             <Grid container spacing={2}>
                 {props.forecast?.days.map((d) => {
                     return (

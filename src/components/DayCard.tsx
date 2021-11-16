@@ -14,20 +14,16 @@ interface DayCardProps {
 
 function DayCard(props: DayCardProps) {
 
-
-    // useEffect(() => {
-    //    // let newSelectedIndex  = props.day.forecastByHours.length > props.selectedHourIndex ? props.selectedHourIndex : props.day.forecastByHours.length -1;
-    //     //props.setSelectedHour(props.day.forecastByHours[props.selectedHourIndex])
-    //     //props.setSelectedHourIndex(props.day.forecastByHours.length > props.selectedHourIndex ? props.selectedHourIndex : props.day.forecastByHours.length -1);
-    // }, [props.day]);
-
     return (
         <Grid item xs>
             <Box onClick={() => {
-                props.setSelectedDay(props.day)
-                
-                // let newSelectedIndex  = props.day.forecastByHours.length > props.selectedHourIndex ? props.selectedHourIndex : props.day.forecastByHours.length -1;
-                // props.setSelectedHourIndex(props.day.forecastByHours.length > props.selectedHourIndex ? props.selectedHourIndex : props.day.forecastByHours.length -1);
+                const targetDay = props.day
+                const newSelectedHourIndex = targetDay.forecastByHours.length > props.selectedHourIndex ? props.selectedHourIndex : targetDay.forecastByHours.length -1;
+                const newSelectedHour = targetDay.forecastByHours[newSelectedHourIndex]
+
+                props.setSelectedDay(targetDay)
+                props.setSelectedHourIndex(newSelectedHourIndex)
+                props.setSelectedHour(newSelectedHour);
             }
                 }>
                 <Card variant={props.selected ? "outlined" : "elevation"}>

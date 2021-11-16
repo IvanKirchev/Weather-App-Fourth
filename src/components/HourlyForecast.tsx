@@ -1,5 +1,5 @@
 import { Box, Slider } from "@mui/material";
-import react, { Dispatch, SetStateAction } from "react"
+import react, { Dispatch, SetStateAction, useEffect } from "react"
 import { IDayForecast, IHourForecast } from "../api/WeatherApi";
 import DayCard from "./DayCard";
 
@@ -49,7 +49,7 @@ function HourlyForecast(props: IHourlyForecastProps) {
                 <Box sx={{ width: "41rem", marginLeft: "34%"}}>
                     <Slider
                         aria-label="Temperature"
-                        value={getSelectedHourIndex()}
+                        value={props.selectedHourIndex}
                         
                         valueLabelDisplay="off"
                         step={1}
@@ -62,7 +62,7 @@ function HourlyForecast(props: IHourlyForecastProps) {
                             }
                         })}
                         min={0}
-                        max={props.day.forecastByHours.length -1}
+                        max={props.day.forecastByHours.length - 1 === 0 ? 1 : props.day.forecastByHours.length - 1}
                         onChange={handleChange}
                     />
                 </Box>
