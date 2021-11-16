@@ -4,10 +4,14 @@ import Forecast from "./Forecast"
 
 interface WeatherLayoutProps {
     forecast: IForecast | null,
-    city: string
+    city: string,
+    error: Error | null
 }
 
 function WeatherLayout(props:WeatherLayoutProps) {
+
+    if(props.error) throw props.error;
+
     return (
         
         <div>

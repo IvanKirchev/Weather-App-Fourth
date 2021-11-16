@@ -1,4 +1,4 @@
-import react, { FormEvent, FormEventHandler } from 'react';
+import react, { Dispatch, FormEvent, FormEventHandler, SetStateAction } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -50,9 +50,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 interface HeaderProps {
-  getForecast: (city: string) => void,
-  changeCity: (city: string) => void,
+  getForecast: (city: string) => void
+  changeCity: (city: string) => void
   city: string
+  setError: Dispatch<SetStateAction<Error | null>>
+  setErrorBoundaryKey: Dispatch<SetStateAction<number>>
 }
 
 export default function Header(props:HeaderProps) {
@@ -80,6 +82,8 @@ export default function Header(props:HeaderProps) {
           </Typography>
           <form onSubmit={(e) => {
                 e.preventDefault();
+                props.setError(null)
+                props.setErrorBoundaryKey((prev) => prev + 1)
                 props.getForecast(props.city);
               }}
           >

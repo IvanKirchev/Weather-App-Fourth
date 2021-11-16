@@ -58,12 +58,12 @@ function useWeatherApi<T>() {
             } catch(error: any) {
                 setError(error)
             }
-
         };
+
         fetchData();
     };
 
-    return {data, getData, error}
+    return {data, getData, error, setError}
 }
 
 export default useWeatherApi;
