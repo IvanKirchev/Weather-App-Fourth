@@ -1,6 +1,6 @@
 import axios from "axios"
 import React, { useState } from "react"
-import {IDayForecast, IHourForecast} from "../api/WeatherApi"
+import {getForecastByCity, IDayForecast, IHourForecast} from "../api/WeatherApi"
 
 function useWeatherApi<T>() {
     const [data, setData] = useState<T | null>(null);
@@ -50,17 +50,13 @@ function useWeatherApi<T>() {
     }
 
     const getData = (city: string) => {
-        const fetchData = async (): Promise<void> => {
-            try {
-                const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=3045bd446337c6e9aa7ef0719614442d&units=metric`)
-                console.log(response.data)
-                setData(parseForecastData(response.data))
-            } catch(error: any) {
-                setError(error)
+        getForecastByCity(city, (data: any, error: any) => {
+            if(error) { 
+                setError(error);
+            } else {
+                setData(parseForecastData(data));
             }
-        };
-
-        fetchData();
+        })
     };
 
     return {data, getData, error, setError}
