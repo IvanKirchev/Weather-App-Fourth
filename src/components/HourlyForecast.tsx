@@ -33,15 +33,7 @@ function HourlyForecast(props: IHourlyForecastProps) {
             }
         }
       };
-
-      function getSelectedHourIndex(): number {
-          if(props.selectedHour) {
-            let index = props.day?.forecastByHours.indexOf(props.selectedHour);
-            return index ? index : 0;
-          }
-          return 0
-      }
-
+      
     return (
         <>
         {props.day ? (

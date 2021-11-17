@@ -20,16 +20,11 @@ function App() {
     });
   }, [])
 
-  const changeCity = (newCity: string) => {
-    setCity(newCity);
-  }
-
   return (
     <div className="App">
-
-        <Header changeCity={changeCity} city={city} getForecast={getData} setError={setError} setErrorBoundaryKey={setErrorBoundarykey}/>
+        <Header changeCity={setCity} city={city} getForecast={getData} setError={setError} setErrorBoundaryKey={setErrorBoundarykey}/>
         <ErrorBoundary key={errorBoundaryKey}>
-          <WeatherLayout forecast={data} city={city} error={error}/>
+          <WeatherLayout forecast={data} error={error}/>
         </ErrorBoundary>
     </div>
   );

@@ -1,5 +1,5 @@
 import axios from "axios";
-import Forecast from "../components/Forecast";
+import ApiConfig from "./ApiConfig";
 
 interface IForecast {
     city: ICity
@@ -66,7 +66,7 @@ interface ICity {
 function getForecastByCity(city: string, callback: (data: any | null, error: Error | null) => void) {
     const fetchData = async (): Promise<void> => {
         try {
-            const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=3045bd446337c6e9aa7ef0719614442d&units=metric`)
+            const response = await axios.get(`${ApiConfig.openweatherUrl}/data/2.5/forecast?q=${city}&appid=${ApiConfig.openWeatherAppID}&units=metric`)
             callback(response.data, null)
         } catch(error: any) {
             callback(null, error)

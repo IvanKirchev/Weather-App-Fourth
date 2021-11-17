@@ -1,4 +1,4 @@
-import react, { Dispatch, FormEvent, FormEventHandler, SetStateAction } from 'react';
+import react, { Dispatch, SetStateAction } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -82,8 +82,8 @@ export default function Header(props:HeaderProps) {
           </Typography>
           <form onSubmit={(e) => {
                 e.preventDefault();
-                props.setError(null)
-                props.setErrorBoundaryKey((prev) => prev + 1)
+                props.setError(null);
+                props.setErrorBoundaryKey((prev) => prev + 1);
                 props.getForecast(props.city);
               }}
           >

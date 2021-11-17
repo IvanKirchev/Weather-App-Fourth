@@ -1,4 +1,4 @@
-import { Box, ButtonBase, Card, CardContent, Grid, Paper, styled, Typography } from "@mui/material";
+import { Box, Grid, Paper, styled, Typography } from "@mui/material";
 import react from "react"
 import { IHourForecast } from "../api/WeatherApi";
 
@@ -15,19 +15,6 @@ function HourlyFullForecast(props: IHourlyFullForecast) {
         position: 'relative',
         top: '12%'
       });
-
-       {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                {props.hourForecast?.visibility}
-                            </Typography>
-                            <Typography variant="h5" component="div">
-                                {props.hourForecast ? Math.round(props.hourForecast?.main.temp_min * 10) / 10 : 0} °C
-                            </Typography>
-                            <Typography sx={{ mb: 1.5 }} color="text.secondary" position="relative" right="25%">
-                                <img width="14%" src={`http://openweathermap.org/img/w/${props.hourForecast?.weather[0].icon}.png`} />
-                            </Typography>
-                            <Typography variant="h5">
-                            {props.hourForecast?.main.pressure}
-                            </Typography> */}
 
     return (
             <div>
@@ -58,15 +45,13 @@ function HourlyFullForecast(props: IHourlyFullForecast) {
                                             Pressure: {props.hourForecast?.main.pressure}
                                         </Typography>
                                     </Grid>
-                                    {/* <Grid item>
-                                        <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                                            Remove
-                                        </Typography>
-                                    </Grid> */}
                                 </Grid>
-                                <Grid item>
+                                <Grid item xs>
                                     <Typography variant="h6" component="div">
                                         {props.hourForecast?.weather[0].description}
+                                    </Typography>
+                                    <Typography variant="caption" color="text.secondary" position="relative" top="56%" left="55%">
+                                        {props.hourForecast ? new Date(props.hourForecast?.dt * 1000).toLocaleDateString('en-US') : null }
                                     </Typography>
                                 </Grid>
                             </Grid>

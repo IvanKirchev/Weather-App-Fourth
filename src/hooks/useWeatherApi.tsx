@@ -1,4 +1,3 @@
-import axios from "axios"
 import React, { useState } from "react"
 import {getForecastByCity, IDayForecast, IHourForecast} from "../api/WeatherApi"
 
@@ -36,7 +35,7 @@ function useWeatherApi<T>() {
         });
 
         days.sort((a: any, b: any) => a.order - b.order);
-        return {...data, days}
+        return {...data, days};
     }
 
     function calculateDayAverageTemp(hourlyRecords: IHourForecast[]) {
@@ -46,20 +45,16 @@ function useWeatherApi<T>() {
             temperaturesArray.push(element.main.temp);
         });
         
-        return temperaturesArray.reduce((a, b) => a + b, 0) / temperaturesArray.length
+        return temperaturesArray.reduce((a, b) => a + b, 0) / temperaturesArray.length;
     }
 
     const getData = (city: string) => {
         getForecastByCity(city, (data: any, error: any) => {
-            if(error) { 
-                setError(error);
-            } else {
-                setData(parseForecastData(data));
-            }
+            error ? setError(error) : setData(parseForecastData(data)); 
         })
     };
 
-    return {data, getData, error, setError}
+    return {data, getData, error, setError};
 }
 
 export default useWeatherApi;
