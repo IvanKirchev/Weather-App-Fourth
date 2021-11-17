@@ -26,7 +26,7 @@ function DayCard(props: DayCardProps) {
                 props.setSelectedHour(newSelectedHour);
             }
                 }>
-                <Card variant={props.selected ? "outlined" : "elevation"}>
+                <Card sx={{ cursor: 'pointer' }} variant={props.selected ? "outlined" : "elevation"}>
                     <CardContent>
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                             {props.day.name}
