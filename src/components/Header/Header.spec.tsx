@@ -10,6 +10,21 @@ it('renders correctly', () => {
     expect(component).toMatchSnapshot();
 });
 
+it('Should  call setCity when new value is typed in the input field', () => {
+  const spyChangeCity = jest.fn();
+  const component = enzyme.shallow(<Header changeCity={spyChangeCity} city={""} getForecast={() => {}} setError={() => {}} setErrorBoundaryKey={() => {}}/>);
+  component.find('#city').at(0).simulate('change', {
+      // below I am trying to set the value of the name field
+      target: [
+        {
+          value: 'Sofia',
+        }
+      ],
+    });
+
+  expect(spyChangeCity).toHaveBeenCalled();
+})
+
 it('Should  call on form submit the following functions getForecast, setError and setErrorBoundary', () => {
     const spyGetForecast = jest.fn();
     const spySetError = jest.fn();

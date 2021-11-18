@@ -30,7 +30,7 @@ it("Should render DayCard component correctly", () => {
   expect(component).toMatchSnapshot();
 });
 
-it("Should call on a card click the following functions: setSelectedDat, setSelectedHour, setSelectedHourIndex", () => {
+it("Should call on a card click the following functions: setSelectedDay, setSelectedHour, setSelectedHourIndex", () => {
   const spySetSelectedDay = jest.fn();
   const spySetSelectedHour = jest.fn();
   const spySetSelectedHourIndex = jest.fn();

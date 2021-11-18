@@ -2,11 +2,11 @@ import { Box, Grid, Paper, styled, Typography } from "@mui/material";
 import react from "react";
 import { IHourForecast } from "../../../../api/WeatherApi";
 
-interface IHourlyFullForecast {
+interface IHourForecastProps {
   hourForecast: IHourForecast | null;
 }
 
-function HourlyForecast(props: IHourlyFullForecast) {
+function HourlyForecast(props: IHourForecastProps) {
   const Img = styled("img")({
     margin: "auto",
     display: "block",

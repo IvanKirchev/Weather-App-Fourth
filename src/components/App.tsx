@@ -11,7 +11,7 @@ function App() {
 
   const [city, setCity] = useState("");
   const [errorBoundaryKey, setErrorBoundarykey] = useState(0);
-  const {data, getData, error, setError} = useWeatherApi<IForecast>();
+  const {data, fetchData, error, setError} = useWeatherApi<IForecast>();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-        <Header changeCity={setCity} city={city} getForecast={getData} setError={setError} setErrorBoundaryKey={setErrorBoundarykey}/>
+        <Header changeCity={setCity} city={city} getForecast={fetchData} setError={setError} setErrorBoundaryKey={setErrorBoundarykey}/>
         <ErrorBoundary key={errorBoundaryKey}>
           <WeatherLayout forecast={data} error={error}/>
         </ErrorBoundary>

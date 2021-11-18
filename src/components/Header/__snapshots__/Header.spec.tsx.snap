@@ -74,7 +74,7 @@ exports[`renders correctly 1`] = `
             <input
               aria-label="search"
               className="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
-              name="city"
+              id="city"
               onAnimationStart={[Function]}
               onBlur={[Function]}
               onChange={[Function]}

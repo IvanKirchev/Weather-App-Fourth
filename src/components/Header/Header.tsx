@@ -96,7 +96,7 @@ export default function Header(props:HeaderProps) {
                 inputProps={{ 'aria-label': 'search' }}
                 onChange={(e) => (props.changeCity(e.target.value))}
                 value={props.city}
-                name="city"
+                id="city"
                 />
             </Search>
           </form>

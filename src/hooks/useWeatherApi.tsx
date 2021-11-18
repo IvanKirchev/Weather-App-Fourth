@@ -51,13 +51,13 @@ function useWeatherApi<T>() {
         return temperaturesArray.reduce((a, b) => a + b, 0) / temperaturesArray.length;
     }
 
-    const getData = (city: string) => {
+    const fetchData = (city: string) => {
         getForecastByCity(city, (data: any, error: any) => {
             error ? setError(error) : setData(parseForecastData(data)); 
         })
     };
 
-    return {data, getData, error, setError};
+    return { data, fetchData, error, setError };
 }
 
 export default useWeatherApi;
