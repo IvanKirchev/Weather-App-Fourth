@@ -1,7 +1,7 @@
-import { Grid, Card, CardContent, Typography } from "@mui/material"
-import { Box } from "@mui/system"
-import react, { Dispatch, SetStateAction, useEffect } from "react"
-import { IDayForecast, IHourForecast } from "../api/WeatherApi";
+import { Box, Grid, Card, CardContent, Typography } from "@mui/material"
+
+import react, { Dispatch, SetStateAction } from "react"
+import { IDayForecast, IHourForecast } from "../../../../api/WeatherApi";
 
 interface DayCardProps {
     selected: boolean
@@ -16,7 +16,7 @@ function DayCard(props: DayCardProps) {
 
     return (
         <Grid item xs>
-            <Box onClick={() => {
+            <Box className="day-card-box" onClick={() => {
                 const targetDay = props.day
                 const newSelectedHourIndex = targetDay.forecastByHours.length > props.selectedHourIndex ? props.selectedHourIndex : targetDay.forecastByHours.length -1;
                 const newSelectedHour = targetDay.forecastByHours[newSelectedHourIndex]

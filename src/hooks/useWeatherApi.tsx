@@ -6,10 +6,10 @@ function useWeatherApi<T>() {
     const [error, setError] = useState<Error | null>(null);
 
     function parseForecastData(data: any) {
-        let days: any = [];
+        let days: IDayForecast[] = [];
         let order = 0;
 
-        data.list.forEach((el: { dt: number; main: {temp: number}, weather: {icon: string, description: string}[] }) => {
+        data.list.forEach((el: IHourForecast) => {
             let date = new Date(el.dt * 1000);
             let index = date.getDay();
             if(days[index]) {
@@ -20,12 +20,15 @@ function useWeatherApi<T>() {
                 }
             } else {
                 days[index] = {
-                    id: date.getDay(),
+                    id: date.getTime(),
                     name: date.toLocaleString('en-us', {  weekday: 'long' }),
                     order: order++,
                     icon: el.weather[0].icon,
                     forecastByHours: [el],
-                    weatherDescription: el.weather[0].description
+                    weatherDescription: el.weather[0].description,
+                    averageTemp: 0,
+                    minTemp: 0,
+                    maxTemp: 0
                 }
             }
         });

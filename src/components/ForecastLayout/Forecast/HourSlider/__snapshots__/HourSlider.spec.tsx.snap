@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render HourSlider component correctly 1`] = `
+<div>
+  <div
+    className="MuiBox-root css-15e9aw9"
+  >
+    <span
+      className="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root MuiSlider-marked css-1aznpnh-MuiSlider-root"
+      onMouseDown={[Function]}
+    >
+      <span
+        className="MuiSlider-rail css-14pt78w-MuiSlider-rail"
+      />
+      <span
+        className="MuiSlider-track css-1gv0vcd-MuiSlider-track"
+        style={
+          Object {
+            "left": "0%",
+            "width": "0%",
+          }
+        }
+      />
+      <span
+        className="MuiSlider-mark MuiSlider-markActive css-6cwnna-MuiSlider-mark"
+        data-index={0}
+        style={
+          Object {
+            "left": "0%",
+          }
+        }
+      />
+      <span
+        aria-hidden={true}
+        className="MuiSlider-markLabel MuiSlider-markLabelActive css-1eoe787-MuiSlider-markLabel"
+        data-index={0}
+        style={
+          Object {
+            "left": "0%",
+          }
+        }
+      >
+        01:52 PM GMT+2
+      </span>
+      <span
+        className="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
+        data-index={0}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        style={
+          Object {
+            "left": "0%",
+            "pointerEvents": undefined,
+          }
+        }
+      >
+        <input
+          aria-label="Temperature"
+          aria-orientation="horizontal"
+          aria-valuemax={1}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          data-index={0}
+          disabled={false}
+          max={1}
+          min={0}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          step={1}
+          style={
+            Object {
+              "border": 0,
+              "clip": "rect(0 0 0 0)",
+              "direction": "ltr",
+              "height": "100%",
+              "margin": -1,
+              "overflow": "hidden",
+              "padding": 0,
+              "position": "absolute",
+              "whiteSpace": "nowrap",
+              "width": "100%",
+            }
+          }
+          type="range"
+          value={0}
+        />
+      </span>
+    </span>
+  </div>
+</div>
+`;

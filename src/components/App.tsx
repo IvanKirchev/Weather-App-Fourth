@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import Header from './Header'
+import Header from './Header/Header'
 import {useState} from "react"
-import WeatherLayout from './WeatherLayout';
+import WeatherLayout from './ForecastLayout/ForecastLayout';
 import useWeatherApi from '../hooks/useWeatherApi';
 import { IForecast } from '../api/WeatherApi';
 import ErrorBoundary from './ErrorBoundary';

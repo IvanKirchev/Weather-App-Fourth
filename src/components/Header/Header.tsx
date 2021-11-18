@@ -100,7 +100,7 @@ export default function Header(props:HeaderProps) {
                 />
             </Search>
           </form>
-          <Typography position="relative" left="65%" variant="h6" color="inherit" component="div">
+          <Typography id="date" position="relative" left="65%" variant="h6" color="inherit" component="div">
             {new Date().toDateString()}
           </Typography>
         </Toolbar>

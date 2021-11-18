@@ -3,13 +3,11 @@ import ApiConfig from "./ApiConfig";
 
 interface IForecast {
     city: ICity
-    list: IHourForecast[]
     days: IDayForecast[]
 }
 
 interface IDayForecast {
-    list: IHourForecast[]
-    id: string
+    id: number
     name: string,
     averageTemp: number
     order: number

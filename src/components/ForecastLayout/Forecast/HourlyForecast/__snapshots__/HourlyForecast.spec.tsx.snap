@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render HourlyForecast component correctly 1`] = `
+<div>
+  <div
+    className="MuiBox-root css-15jbnc6"
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1s8qwjp-MuiPaper-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+        >
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-152sepb-MuiTypography-root"
+          >
+            <img
+              alt="complex"
+              className="css-zbzyxd"
+              src="http://openweathermap.org/img/w/icon url.png"
+            />
+          </p>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-spacing-xs-undefined MuiGrid-grid-xs-12 MuiGrid-grid-sm-true css-19gf1bx-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-grid-xs-true css-1x3r9m2-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true css-4jz4pb-MuiGrid-root"
+            >
+              <div
+                className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-h93ljk-MuiTypography-root"
+              >
+                13
+                 
+                °C
+              </div>
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+              >
+                Feels like
+                 
+                13
+                 
+                °C
+              </p>
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+              >
+                Humidity: 
+                13
+              </p>
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+              >
+                Wind: 
+                13
+              </p>
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+              >
+                Pressure: 
+                13
+              </p>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true css-4jz4pb-MuiGrid-root"
+          >
+            <div
+              className="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+            >
+              Nice weather
+            </div>
+            <span
+              className="MuiTypography-root MuiTypography-caption css-1hjybsy-MuiTypography-root"
+            >
+              7/9/1970
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
