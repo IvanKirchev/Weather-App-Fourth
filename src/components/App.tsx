@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Header from './Header/Header'
 import {useState} from "react"
-import WeatherLayout from './ForecastLayout/ForecastLayout';
+import ForecastLayout from './ForecastLayout/ForecastLayout';
 import useWeatherApi from '../hooks/useWeatherApi';
 import { IForecast } from '../api/WeatherApi';
 import ErrorBoundary from './ErrorBoundary';
@@ -11,7 +11,7 @@ function App() {
 
   const [city, setCity] = useState("");
   const [errorBoundaryKey, setErrorBoundarykey] = useState(0);
-  const {data, fetchData, error, setError} = useWeatherApi<IForecast>();
+  const {data, fetchData, error, setError} = useWeatherApi();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -24,7 +24,7 @@ function App() {
     <div className="App">
         <Header changeCity={setCity} city={city} getForecast={fetchData} setError={setError} setErrorBoundaryKey={setErrorBoundarykey}/>
         <ErrorBoundary key={errorBoundaryKey}>
-          <WeatherLayout forecast={data} error={error}/>
+          <ForecastLayout forecast={data} error={error}/>
         </ErrorBoundary>
     </div>
   );

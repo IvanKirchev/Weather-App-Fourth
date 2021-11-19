@@ -36,7 +36,6 @@ const mockHour = {
 const mockDayForecast: IDayForecast = {
   id: 1637236800000,
   name: "Thursday",
-  order: 0,
   icon: "04d",
   forecastByHours: [mockHour],
   weatherDescription: "broken clouds",

@@ -65,12 +65,17 @@ function HourlyForecast(props: IHourForecastProps) {
                   color="text.secondary"
                   position="relative"
                   top="56%"
-                  left="55%"
+                  left="35%"
                 >
                   {props.hourForecast
                     ? new Date(
                         props.hourForecast?.dt * 1000
-                      ).toLocaleDateString("en-US")
+                      ).toLocaleDateString([], {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: false,
+                        timeZoneName: "short"
+                      })
                     : null}
                 </Typography>
               </Grid>

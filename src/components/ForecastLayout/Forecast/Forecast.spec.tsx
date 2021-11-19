@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Forecast from './Forecast';
-import enzyme from 'enzyme';
 import { IForecast } from '../../../api/WeatherApi';
 
 const forecastMock: IForecast = {

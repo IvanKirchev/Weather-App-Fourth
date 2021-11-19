@@ -40,6 +40,25 @@ function HourSlider(props: HourSliderProps) {
     }
   };
 
+  const marks = props.day ? props.day.forecastByHours.map((hour, index) => {
+    let newIndex = index || 0;
+
+    return {
+      value: index,
+      label: getHourByIndex(newIndex),
+    };
+  }) : [];
+
+  function getMaxSliderValue(): number {
+    if(props.day && props.day.forecastByHours.length - 1 === 0) {
+      return 1
+    } else if(props.day) {
+      return props.day.forecastByHours.length - 1
+    } 
+
+    return 0;
+  }
+
   return (
     <>
       {props.day ? (
@@ -50,20 +69,9 @@ function HourSlider(props: HourSliderProps) {
               value={props.selectedHourIndex}
               valueLabelDisplay="off"
               step={1}
-              marks={props.day.forecastByHours.map((h) => {
-                let index = props.day?.forecastByHours.indexOf(h);
-                index = index ? index : 0;
-                return {
-                  value: index,
-                  label: getHourByIndex(index),
-                };
-              })}
+              marks={marks}
               min={0}
-              max={
-                props.day.forecastByHours.length - 1 === 0
-                  ? 1
-                  : props.day.forecastByHours.length - 1
-              }
+              max={getMaxSliderValue()}
               onChange={handleChange}
             />
           </Box>

@@ -4,13 +4,13 @@ import ApiConfig from "./ApiConfig";
 interface IForecast {
     city: ICity
     days: IDayForecast[]
+    list: any
 }
 
 interface IDayForecast {
     id: number
     name: string,
     averageTemp: number
-    order: number
     forecastByHours: IHourForecast[]
     icon: string,
     minTemp: number,
@@ -61,12 +61,12 @@ interface ICity {
     timezone: number
 }
 
-function getForecastByCity(city: string, callback: (data: any | null, error: Error | null) => void) {
+function getForecastByCity(city: string, callback: (data: IForecast | null, error: unknown | null) => void) {
     const fetchData = async (): Promise<void> => {
         try {
             const response = await axios.get(`${ApiConfig.openweatherUrl}/data/2.5/forecast?q=${city}&appid=${ApiConfig.openWeatherAppID}&units=metric`)
             callback(response.data, null)
-        } catch(error: any) {
+        } catch(error: unknown) {
             callback(null, error)
         }
     };
@@ -75,4 +75,4 @@ function getForecastByCity(city: string, callback: (data: any | null, error: Err
 }
 
 export { getForecastByCity }
-export type { IForecast, IDayForecast, IHourForecast, IMainForecastData, IWeatherDescription, IWind };
+export type { IForecast, IDayForecast, IHourForecast, IMainForecastData, IWeatherDescription, IWind, ICity };

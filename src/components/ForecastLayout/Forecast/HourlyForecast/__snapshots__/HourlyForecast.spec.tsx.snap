@@ -78,9 +78,9 @@ exports[`Should render HourlyForecast component correctly 1`] = `
               Nice weather
             </div>
             <span
-              className="MuiTypography-root MuiTypography-caption css-1hjybsy-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-caption css-1jn4ul4-MuiTypography-root"
             >
-              7/9/1970
+              7/9/1970, 13:52 GMT+2
             </span>
           </div>
         </div>

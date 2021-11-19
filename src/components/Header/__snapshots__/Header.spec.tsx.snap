@@ -90,7 +90,7 @@ exports[`renders correctly 1`] = `
         className="MuiTypography-root MuiTypography-h6 css-1aj5a60-MuiTypography-root"
         id="date"
       >
-        Thu Nov 18 2021
+        Fri Nov 19 2021
       </div>
     </div>
   </header>

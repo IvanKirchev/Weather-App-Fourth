@@ -26,7 +26,7 @@ exports[`Should render DayCard component correctly 1`] = `
           °C
         </div>
         <p
-          className="MuiTypography-root MuiTypography-body1 css-698btc-MuiTypography-root"
+          className="MuiTypography-root MuiTypography-body1 css-9eg9l8-MuiTypography-root"
         >
           <img
             src="http://openweathermap.org/img/w/04d.png"

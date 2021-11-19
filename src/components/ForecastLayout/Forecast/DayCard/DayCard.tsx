@@ -14,18 +14,20 @@ interface DayCardProps {
 
 function DayCard(props: DayCardProps) {
 
+
+    function onDayCardClick() {
+        const targetDay = props.day
+        const newSelectedHourIndex = targetDay.forecastByHours.length > props.selectedHourIndex ? props.selectedHourIndex : targetDay.forecastByHours.length -1;
+        const newSelectedHour = targetDay.forecastByHours[newSelectedHourIndex]
+
+        props.setSelectedDay(targetDay)
+        props.setSelectedHourIndex(newSelectedHourIndex)
+        props.setSelectedHour(newSelectedHour);
+    }
+
     return (
         <Grid item xs>
-            <Box className="day-card-box" onClick={() => {
-                const targetDay = props.day
-                const newSelectedHourIndex = targetDay.forecastByHours.length > props.selectedHourIndex ? props.selectedHourIndex : targetDay.forecastByHours.length -1;
-                const newSelectedHour = targetDay.forecastByHours[newSelectedHourIndex]
-
-                props.setSelectedDay(targetDay)
-                props.setSelectedHourIndex(newSelectedHourIndex)
-                props.setSelectedHour(newSelectedHour);
-            }
-                }>
+            <Box className="day-card-box" onClick={onDayCardClick}>
                 <Card sx={{ cursor: 'pointer' }} variant={props.selected ? "outlined" : "elevation"}>
                     <CardContent>
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -34,7 +36,7 @@ function DayCard(props: DayCardProps) {
                         <Typography variant="h5" component="div">
                             {Math.round(props.day.averageTemp * 10) / 10}°C
                         </Typography>
-                        <Typography sx={{ mb: 1.5 }} color="text.secondary" position="relative" right="25%">
+                        <Typography sx={{ mb: 1.5 }} color="text.secondary" >
                             <img src={`http://openweathermap.org/img/w/${props.day.icon}.png`} />
                         </Typography>
                         <Typography variant="h5">

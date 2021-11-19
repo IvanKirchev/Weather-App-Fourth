@@ -16,7 +16,7 @@ function Forecast(props: ForecastProps) {
   const [selectedHour, setSelectedHour] = useState<IHourForecast | null>(null);
   const [selectedHourIndex, setSelectedHourIndex] = useState<number>(0);
 
-  const StyledDayCard = styled(DayCard)(() => ({
+  const ClickableDayCard = styled(DayCard)(() => ({
     ":hover": "pointer",
   }));
 
@@ -27,9 +27,9 @@ function Forecast(props: ForecastProps) {
       ) : null}
       <Grid container spacing={2}>
         {props.forecast?.days.map((d) => (
-          <StyledDayCard
+          <ClickableDayCard
             key={d.id}
-            selected={selectedDay?.id == d.id}
+            selected={selectedDay?.id === d.id}
             day={d}
             setSelectedDay={setSelectedDay}
             setSelectedHour={setSelectedHour}
