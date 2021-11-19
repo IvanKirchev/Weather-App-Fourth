@@ -1,6 +1,6 @@
 Instructions on how to run and build the apploication
 
-Requirements: Recent node and npm version must be installed. Versions used during development: node v17.0.1, npm 8.1.0
+Requirements: Recent node and npm versions must be installed. Versions used during development: node v17.0.1, npm 8.1.0
 
 The following commands are avaible from the root derictory of the project 
 
@@ -31,6 +31,6 @@ Your app is ready to be deployed!
 
 - Add react-placeholder that will be used during loading of the forecast
 
-- Edit the slider to have fixed length and just disable the hours for which there is no avaible forecast
+- Edit the slider to have fixed length and just disable the hours for which there is no available forecast
 
 - Optimize performance (re-rendering)
